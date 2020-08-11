@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block styleLink %}<link rel="stylesheet" href="{{ url_for('static', filename='css/extraDetails.css') }}">
+{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <h3 class = "navWidth" id="flashMessage">{{ message }}</h3>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<div class="productDetails">
+    <div class="productImage">
+        <img src = {{ tshirtDetails.tshirt_details['imageUrl'] }} alt="">
+    </div>
+    <div class="productDescription">
+        <h1>{{ tshirtDetails.tshirt_details['product'] }}</h1>
+        <p id="price">£{{ tshirtDetails.tshirt_details['price'] }}</p>
+        <h2>PRODUCT DETAILS</h2>
+        <ul>
+            {% for detail in fineDetails %}
+            <li>{{detail}}</li>
+            {% endfor %}
+        </ul>
+        <p>{{ tshirtDetails.tshirt_details['description'] }}</p>
+        <form action="#" method="post">
+            <input type="submit" value="Add to Basket" name="basket">
+            <button class="wishlistBtn" type="submit" value = "wishlist" name="wishlist">
+                <img src="../static/images/heart-hollow.png" />
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

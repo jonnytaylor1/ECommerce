@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Login Page{% endblock %}
+{% block styleLink %}<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">{% endblock %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <h3 class = "navWidth" id="flashMessage">{{ message }}</h3>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class ="containerWidth formContainer">
+    <h1>Sign In</h1>
+    <form action="#" method="post" id="loginForm" onsubmit="loginFormValidate(this)">
+        <label>EMAIL</label>
+        <input id="email" type="email" name="email" onblur = "validateEmail()">
+        <p class = "warning" id="invalidEmail"></p>
+        <label>PASSWORD</label>
+        <input id="password" type="password" name="password" onblur = "validatePassword()">
+        <label id="show" for="showPasswordCheckbox">SHOW</label>
+        <input id="showPasswordCheckbox" type="checkbox" hidden onclick="showPassword()" value="">
+        <p class = "warning" id="requiredPassword"></p>
+        <p class = "warning" id="invalidPassword"></p>
+        <button type="submit" value="submit" >Sign In</button>
+    </form>
+    <div class="containerWidth loginLink">
+        <p>Don't have an account?</p>
+        <a href="/signup">Signup Now</a>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/signup.js')}}"></script>
+{% endblock %}
+
+<!-- the 'with' keyword limits the scope of the variable created -->

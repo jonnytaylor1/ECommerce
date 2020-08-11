@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block styleLink %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+{% block content %}
+<div class = "containerWidth formContainer">
+    <h1>Card Details</h1>
+    <form action="" method="post" id="payForm" onsubmit="validatePayForm(this)">
+        <label for="name">Name</label>
+        <input id="name" maxlength="20" type="text" onblur="validateName()">
+        <p class = "warning" id="invalidName"></p>  
+        <label for="cardnumber">Card Number</label>
+        <input id="cardNumber" type="text" maxlength="23" onblur="validateCardNumber()">
+        <p class = "warning" id="invalidCardnumber"></p>
+        <label for="monthDropdown">Expiration (mm/yyyy)</label>
+        <select name="" id="monthDropdown" onblur="validateExpiration()">
+            <option value="MM">MM</option>
+            {% for i in range(9) %}
+            <option value="{{i+1}}">0{{i+1}}</option>
+            {% endfor %}
+            {% for i in range(9,12) %}
+            <option value="{{i+1}}">{{i+1}}</option>
+            {% endfor %}
+        </select>
+        <select name="" id="yearDropdown" onblur="validateExpiration()">
+            <option value="YY">YYYY</option>
+            {% for i in range(2019,2035) %}
+            <option value="{{i+1}}">{{i+1}}</option>
+            {% endfor %}
+        </select>
+        <p class = "warning" id="invalidExpirationDate"></p>
+        <label for="securityCode">Security Code</label>
+        <input id="securityCode"  type="number" onKeyPress="if(this.value.length==3) return false;" onblur="validateSecurityCode()">
+        <p class = "warning" id="invalidSecurityCode"></p>
+        <button type="submit" value="submit" >PAY</button>
+        <p class="amountPayable" >Payment: £{{ amountPayable }}</p>
+    </form>
+</div>
+
+
+<script src="{{url_for('static', filename='js/checkout.js')}}"></script>
+
+{% endblock %}

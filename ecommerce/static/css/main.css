@@ -1,0 +1,227 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  min-height: 100%;
+}
+ul {
+	list-style: none;
+}
+
+header{
+  border-bottom: solid 2px black;
+}
+
+
+input:focus{
+  outline: none;
+}
+
+button:focus{
+  outline: none;
+}
+
+nav ul{
+  display: flex;
+  line-height: 5rem;
+}
+
+.logo{
+  margin-right: auto;
+  padding-left: 0;
+}
+
+nav ul li{
+  list-style-type: none;
+  display: flex;
+  padding-left: 1rem;
+}
+
+/* Anchor tags */
+
+a{
+  color: black;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.logo a {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* Burger Menu */
+
+.crossIcon{
+  display: none;
+}
+
+.burgerIcon{
+  display: none;
+}
+
+/* Title */
+
+.pageTitle{
+  text-align: center;
+}
+
+.toggleMenu:hover{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Flash messages */
+
+#flashMessage{
+  background-color: #f1f1f1;
+  text-align: center;
+  line-height: 2rem;
+}
+
+/* Footer */
+
+footer{
+  position: static;
+  left: 0;
+  bottom: 0;
+  width: 100%;   
+  border-top: solid black 2px;
+  margin-top: 4rem;
+}
+
+.contactDetails{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 30rem;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 1300px) {
+  body{
+    margin: 0 50px;
+}
+}
+
+@media screen and (max-width: 1000px) {
+  body{
+      margin: 0 25px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+
+  body {
+    margin: 0;
+  }
+  header{
+    padding: 0 1rem;
+  }
+}
+
+
+
+@media screen and (max-width: 550px) {
+
+  header{
+    display: flex;
+  }
+
+  nav{
+    width: 100%;
+  }
+
+  .logo a {
+    font-size: 1.6rem;
+  }
+
+  /* Burger Menu */
+
+  .toggleMenu{
+    float: right;
+  }
+
+  /* The burgerDropdown class gets added to the navbar when the burger menu is clicked */
+
+  .burgerDropdown ul {
+    display: block;
+    align-content: center;
+  }
+
+  li a{
+    width: 100%;
+  }
+
+  nav ul li:nth-child(n+2){
+    display: none;
+  }
+
+  .burgerDropdown ul li:nth-child(n+2){
+    display: block;
+    border-top: black solid 1px;
+  }
+
+  .burgerIcon{
+    display: flex;
+    font-size: 2rem;
+  }
+
+  .toggleMenu{
+    display: flex;
+    margin-left: auto;
+    align-self: center;
+  }
+
+  .displayNone{
+    display: none;
+  }
+
+  .display{
+    display: block;
+  }
+
+  .crossIcon{
+    font-size: 3rem;
+    margin: 2rem;
+  }
+
+  .center{
+    justify-content: center;
+  }
+}

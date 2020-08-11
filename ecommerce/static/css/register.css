@@ -1,0 +1,105 @@
+.containerWidth{
+    width: 350px;
+}
+
+
+.formContainer {
+    margin: 4rem auto 0 auto;
+    padding: 3rem 4rem 2rem 4rem;
+    border: 1px solid rgb(148, 148, 148);
+    border-radius: 1rem;
+}
+
+h1{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+
+
+button{
+    margin-top: 2rem;
+    width: 7rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    background-color: rgb(0, 123, 255);
+    color: white;
+    font-size: 1.25rem;
+    border: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+input, label{
+    width: 98%;
+}
+
+label{
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: rgb(145, 145, 145);
+}
+
+input{
+    color: grey;
+    font-size: 1.75rem;
+    border: 0;
+    border-bottom: 1px solid rgb(201, 201, 201);
+}
+
+#show {
+    width: 0px;
+}
+
+#show:hover{
+    cursor: pointer;
+}
+
+.warning{
+    color: red;
+}
+
+.loginLink{
+    margin-top: 1.5rem;
+}
+
+.loginLink a {
+    font-size: 1rem;
+    color: rgb(0, 123, 255);
+    width: fit-content;
+    margin-top: 0.5rem;
+}
+
+
+.expirationDate{
+    display: flex;
+    justify-content: space-between;
+}
+
+#expirationDate{
+    width: 25%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#securityCode{
+    width: 20%;
+}
+
+.amountPayable{
+    margin-top: 1rem;
+}
+

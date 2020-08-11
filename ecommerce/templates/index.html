@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block styleLink %}<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <h3 id="flashMessage">{{ message }}</h3>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <h1 class="page-title">MENS T-SHIRTS</h1>
+    <ul class="image-gallery">
+        {% for shirt in tshirts %}
+        <li>
+            <article>
+                <div class="image-container">
+                    <a href= {{"/tshirt/" + (loop.index) |string }}>
+                        <img src= {{shirt.tshirt_details['imageUrl']}} alt="T-shirt">
+                    </a>
+                </div>
+                <div class="item-details">
+                    <a href={{"/tshirt/" + (loop.index) |string }}>
+                        <p>{{ shirt.tshirt_details['product'] }}</p>
+                    </a>
+                    <p>£{{ shirt.tshirt_details['price'] }}</p>
+                </div>
+            </article>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endblock %}

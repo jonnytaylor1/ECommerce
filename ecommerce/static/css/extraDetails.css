@@ -1,0 +1,98 @@
+.productDetails{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 5rem 0 0 0;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+  }
+
+
+  .productDetails h1{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+.productDetails h2{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+  .productDescription{
+      border-left: none;
+      padding: 0 1rem 0 3rem;
+  }
+
+  .productDescription ul{
+      list-style: initial;
+      display: block;
+      margin-bottom: 2rem;
+  }
+
+  .productDescription ul li{
+    line-height: 2rem;
+  }
+
+
+  #price{
+      font-size: 2rem;
+      font-weight: bold;
+  }
+
+form{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+
+  button{
+    height: 3rem;
+    border-radius: 0.5rem;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 1.25rem;
+    border: none;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+button img{
+  width: 40px;
+}
+
+.wishlistBtn{
+  background-color: white;
+}
+
+form input{
+  height: 40px;
+  width: 140px;
+  font-size: 1.25rem;
+  color: white;
+  background-color: black;
+  border: none;
+  margin-right: 2rem;
+}
+
+form input:hover{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 680px) {
+  .productDetails{
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr auto;
+      margin-top: 0rem;
+  }
+  .productDescription{
+    margin-top: 2rem;
+}
+}

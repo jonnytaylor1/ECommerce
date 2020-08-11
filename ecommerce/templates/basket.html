@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block styleLink %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/basket.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/shared.css') }}">
+{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <h3 class = "navWidth" id="flashMessage">{{ message }}</h3>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+{% if tshirtBasket %}
+    <h1>Basket</h1>
+    <div class="basketContainer">
+        {% for item in tshirtBasket %}
+        <div class="basketItem">
+            <div class="imageContainer">
+                <img src="{{ item['imageUrl'] }}" alt="">
+            </div>
+            <div class="itemInfo">
+                <div class="description">
+                    {{ item['product'] }}
+                </div>
+                <div class="quantityContainer">
+                    <form class="quantityInfo" method="post" action="">
+                        <button class="quantityBtn" type="submit" value = "Decrease Quantity" name = "change">&#8722;</button>
+                        <input class="quantity" type="text" value = {{item['quantity'] }} name = "quantity" size="3">
+                        <input class="changeQuantity"type="submit" value = "Change Quantity" name = "change">
+                        <button class="quantityBtn" type="submit" value = "Increase Quantity" name = "change">&#43;</button>
+                        <input type="hidden" value = {{item['id'] }} name = "productId">
+                        <button class="removeItem" type="submit" value = "Remove Item" name = "change">&#x2715;</button>
+                    </form>
+                </div>
+                <div class="price">
+                    £{{ item['product_total'] }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="removeAll">
+            <form class="removeAllForm" method="post">
+                <input class="removeAllBtn" type="submit" value = "Empty Basket" name="change">
+            </form>
+        </div>
+        <form class="basketTotal" method="post">
+            <p>Total: <span>£{{ basketTotal }}</span></p>
+            <button type="submit" value = "checkout" name="checkout">CHECKOUT</button>
+        </form>
+    </div>
+{% endif %}
+
+<script src="{{url_for('static', filename='js/basket.js')}}"></script>
+{% endblock %}
