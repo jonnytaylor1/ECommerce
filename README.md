@@ -1,3 +1,8 @@
+## E-Commerce Website (April 2020)
+
+This E-Commerce website was developed as part of a university module, using Python(Flask), Javascript, CSS, HTML and mySQL. The website is responsive and renders the T-shirt information and images from the database.
+
+
 ## Gif Demos
 
 **Adding Items To Basket**
@@ -12,9 +17,7 @@
 
 ![Gif of checkout](Gif1.gif)
 
-## About
 
-This E-Commerce website was developed using Python(Flask), Javascript, CSS, HTML and mySQL. The website is responsive and renders the T-shirt information and images from the database. (Finished April 2020)
 
 ## Skills
 
